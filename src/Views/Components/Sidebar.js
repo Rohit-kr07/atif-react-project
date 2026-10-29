@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Sidebarstyle } from "../../Styles/Sidebarstyle";
 import Profile from "./Profile";
 
+
 const Sidebar = () => {
     const location = useLocation();
 const [hoveredLink, setHoveredLink] = useState("");
@@ -96,7 +97,7 @@ onMouseLeave={()=> ("")}
             <p style={Sidebarstyle.section}>QUICK ACTION</p>
 
             <Link
-                to="/help"
+                to="/HelpSupportpage"
                 style={{
                     ...Sidebarstyle.quickLink,
                     textDecoration: "none",
@@ -108,7 +109,7 @@ onMouseLeave={()=> ("")}
             <p style={Sidebarstyle.account}>ACCOUNT</p>
 
             <Link
-                to="/login"
+                to="/loginpage"
                 style={{
                     ...Sidebarstyle.signout,
                     textDecoration: "none",

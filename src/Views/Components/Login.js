@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import { Logincss } from "../../Styles/LoginStyle";
 
 function Login() {
+    // const savedUser = JSON.parse(localStorage.getItem("user") || "null");
+    // const savedEmail = savedUser?.email || "";
+
     return (
         <div style={Logincss.body}>
-
             <div style={Logincss.container}>
 
-                {/* Heading */}
                 <p style={Logincss.welcome}>
                     Welcome Back
                 </p>
@@ -17,9 +18,7 @@ function Login() {
                     Sign in to continue to your dashboard
                 </p>
 
-                {/* Email */}
                 <div style={Logincss.emailbox}>
-
                     <label
                         htmlFor="email"
                         style={Logincss.label1}
@@ -34,13 +33,11 @@ function Login() {
                         type="email"
                         placeholder="Enter your email address"
                         style={Logincss.input1}
+                        // defaultValue={savedEmail}
                     />
-
                 </div>
 
-                {/* Password */}
                 <div style={Logincss.pass}>
-
                     <label
                         htmlFor="password"
                         style={Logincss.label2}
@@ -56,45 +53,34 @@ function Login() {
                         placeholder="Enter your password"
                         style={Logincss.input2}
                     />
-
                 </div>
 
-                {/* Password information */}
                 <p style={Logincss.lastpara}>
                     Password must be at least 6 characters long.
                 </p>
 
-                {/* Remember me + Forgot password */}
                 <div style={Logincss.lastbox}>
-
                     <label style={Logincss.remember}>
-                        <input
-                            type="checkbox"
-                        />
-
-                        <span>
-                            Remember me for 30 days
-                        </span>
+                        <input type="checkbox" />
+                        <span>Remember me for 30 days</span>
                     </label>
 
                     <p style={Logincss.forgot}>
                         Forgot password?
                     </p>
-
                 </div>
 
-                {/* Login Button */}
-                <button
-                    type="button"
-                    style={Logincss.loginButton}
-                >
-                    Login
-                </button>
+                <Link to="/Overviewpage" style={{textDecoration: "none"}}>
+                    <button
+                        type="button"
+                        style={Logincss.loginButton}
+                    >
+                        Login
+                    </button>
+                </Link>
 
-                {/* Signup */}
                 <p style={Logincss.signupText}>
                     Don't have an account?{" "}
-
                     <Link
                         to="/signuppage"
                         style={Logincss.signupLink}
@@ -104,7 +90,6 @@ function Login() {
                 </p>
 
             </div>
-
         </div>
     );
 }
